@@ -85,7 +85,7 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 [Axis tick strategies]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/globals.html#axistickstrategies
 [UI position origins]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/globals.html#uiorigins
 [UI layout builders]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/globals.html#uilayoutbuilders
-[Time formatting functions]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/
-[Synchronize axis intervals utility]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/
+[Time formatting functions]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/globals.html#timeformattingfunctions
+[Synchronize axis intervals utility]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/globals.html#synchronizeaxisintervals
 [Translate point utility]: https://www.arction.com/lightningchart-js-api-documentation/v3.3.0/globals.html#translatepoint
 
