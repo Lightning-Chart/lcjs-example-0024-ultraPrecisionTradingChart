@@ -19,6 +19,9 @@ The demo can be used as an example or a seed project. Local execution requires t
 
 ## Description
 
+**Please note that using LightningChart JS for Trading use cases requires a special license agreement.**
+For more information, please [contact us](https://lightningchart.com/contact/).
+
 This example showcases how LightningChart JS can be used to enable next-generation Fintech chart applications.
 
 As proven in our [2021 line charts performance comparison](https://lightningchart.com/javascript-charts-performance-comparison/), LightningChart JS line charts are **over 700 times faster** than other web charts. LightningChart JS has been proved to be able to visualize data sets with even up to 500 million data points.
@@ -78,14 +81,14 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2022. All rights reserved.
 
 
-[Dashboard]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/classes/Dashboard.html
-[XY cartesian chart]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/classes/ChartXY.html
-[Line series]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/classes/LineSeries.html
-[Axis]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/classes/Axis.html
-[Axis tick strategies]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/variables/AxisTickStrategies.html
-[UI position origins]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/variables/UIOrigins.html
-[UI layout builders]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/variables/UILayoutBuilders.html
-[Time formatting functions]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/variables/TimeFormattingFunctions.html
-[Synchronize axis intervals utility]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/functions/synchronizeAxisIntervals.html
-[Translate point utility]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/functions/translatePoint.html
+[Dashboard]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/Dashboard.html
+[XY cartesian chart]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/ChartXY.html
+[Line series]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/LineSeries.html
+[Axis]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/Axis.html
+[Axis tick strategies]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/variables/AxisTickStrategies.html
+[UI position origins]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/variables/UIOrigins.html
+[UI layout builders]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/variables/UILayoutBuilders.html
+[Time formatting functions]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/variables/TimeFormattingFunctions.html
+[Synchronize axis intervals utility]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/functions/synchronizeAxisIntervals.html
+[Translate point utility]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/functions/translatePoint.html
 
