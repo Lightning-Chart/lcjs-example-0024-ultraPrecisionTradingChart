@@ -13,7 +13,6 @@ const {
     emptyFill,
     emptyLine,
     synchronizeAxisIntervals,
-    translatePoint,
     lightningChart,
     UIOrigins,
     UIElementBuilders,
@@ -62,8 +61,12 @@ const chartList = new Array(CHANNELS).fill(0).map((_, i) => {
         })
         .setMouseInteractions(false)
         .setBackground((background) => background.setStrokeStyle(emptyLine))
-    chart.getDefaultAxisX().onIntervalChange((_, start, end) => uiLayout.setPosition({ x: start, y: chart.getDefaultAxisY().getInterval().end }))
-    chart.getDefaultAxisY().onIntervalChange((_, start, end) => uiLayout.setPosition({ x: chart.getDefaultAxisX().getInterval().start, y: end }))
+    chart
+        .getDefaultAxisX()
+        .onIntervalChange((_, start, end) => uiLayout.setPosition({ x: start, y: chart.getDefaultAxisY().getInterval().end }))
+    chart
+        .getDefaultAxisY()
+        .onIntervalChange((_, start, end) => uiLayout.setPosition({ x: chart.getDefaultAxisX().getInterval().start, y: end }))
     uiLayout
         .addElement(UIElementBuilders.TextBox)
         .setText('< Stock name >')
@@ -130,16 +133,11 @@ Promise.all(
 
             xBandList.forEach((band, i) => {
                 const bandChart = chartList[i]
-                const xAxisLocationStart = translatePoint(
-                    bandChart.engine.clientLocation2Engine(startLocation.x, startLocation.y),
-                    bandChart.engine.scale,
-                    { x: axisX, y: axisY },
+                const xAxisLocationStart = bandChart.translateCoordinate(
+                    { clientX: startLocation.x, clientY: startLocation.y },
+                    bandChart.coordsAxis,
                 ).x
-                const xAxisLocationNow = translatePoint(
-                    bandChart.engine.clientLocation2Engine(event.clientX, event.clientY),
-                    bandChart.engine.scale,
-                    { x: axisX, y: axisY },
-                ).x
+                const xAxisLocationNow = bandChart.translateCoordinate(event, bandChart.coordsAxis).x
                 if (Math.abs(event.clientX - startLocation.x) > 10) {
                     band.setVisible(true).setValueStart(xAxisLocationStart).setValueEnd(xAxisLocationNow)
                 } else {
@@ -205,7 +203,7 @@ Promise.all(
 // Setup custom data cursor.
 const xTicks = chartList.map((chart) => chart.getDefaultAxisX().addCustomTick(UIElementBuilders.PointableTextBox).setVisible(false))
 const resultTable = dashboard
-    .addUIElement(UILayoutBuilders.Column, dashboard.engine.scale)
+    .addUIElement(UILayoutBuilders.Column, dashboard.coordsRelative)
     .setMouseInteractions(false)
     .setOrigin(UIOrigins.LeftBottom)
     .setMargin(5)
@@ -215,30 +213,27 @@ resultTable.setVisible(false)
 chartList.forEach((chart) => {
     chart.setAutoCursorMode(AutoCursorModes.disabled)
     const showCursorAtEvent = (event) => {
-        const mouseLocationEngine = chart.engine.clientLocation2Engine(event.clientX, event.clientY)
-        const mouseLocationAxisX = translatePoint(mouseLocationEngine, chart.engine.scale, {
-            x: chart.getDefaultAxisX(),
-            y: chart.getDefaultAxisY(),
-        }).x
+        const mouseLocationAxisX = chart.translateCoordinate(event, chart.coordsAxis).x
         resultTableRows[0].setText(chart.getDefaultAxisX().formatValue(mouseLocationAxisX))
         for (let i = 0; i < CHANNELS; i += 1) {
             const series = seriesList[i]
-            const nearestDataPoint = series.solveNearestFromScreen(mouseLocationEngine)
+            const nearestDataPoint = series.solveNearestFromScreen(event)
             resultTableRows[1 + i].setText(
                 series.getName() + ': ' + (nearestDataPoint ? chart.getDefaultAxisY().formatValue(nearestDataPoint.location.y) + ' €' : ''),
             )
         }
-        resultTable.setVisible(true).setPosition(mouseLocationEngine)
+        resultTable.setVisible(true).setPosition(dashboard.translateCoordinate(event, dashboard.coordsRelative))
         xTicks.forEach((xTick) => xTick.setVisible(true).setValue(mouseLocationAxisX))
     }
+    const hideCursor = () => {
+        resultTable.setVisible(false)
+        xTicks.forEach((xTick) => xTick.setVisible(false))
+    }
     chart.onSeriesBackgroundMouseMove((_, event) => showCursorAtEvent(event))
-    chart.getSeries().forEach(series => series.onMouseMove((_, event) => showCursorAtEvent(event)))
-    chart.onSeriesBackgroundMouseDragStart(() => {
-        resultTable.setVisible(false)
-        xTicks.forEach((xTick) => xTick.setVisible(false))
+    chart.getSeries().forEach((series) => {
+        series.onMouseMove((_, event) => showCursorAtEvent(event))
+        series.onMouseLeave(hideCursor)
     })
-    chart.onSeriesBackgroundMouseLeave(() => {
-        resultTable.setVisible(false)
-        xTicks.forEach((xTick) => xTick.setVisible(false))
-    })
+    chart.onSeriesBackgroundMouseDragStart(hideCursor)
+    chart.onSeriesBackgroundMouseLeave(hideCursor)
 })

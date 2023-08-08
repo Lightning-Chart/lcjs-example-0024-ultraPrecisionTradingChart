@@ -57,7 +57,6 @@ To learn more about LightningChart JS and its Fintech capabilities, here are som
 * [UI layout builders]
 * [Time formatting functions]
 * [Synchronize axis intervals utility]
-* [Translate point utility]
 
 
 ## Support
@@ -81,14 +80,13 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2022. All rights reserved.
 
 
-[Dashboard]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/Dashboard.html
-[XY cartesian chart]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/ChartXY.html
-[Line series]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/LineSeries.html
-[Axis]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/Axis.html
-[Axis tick strategies]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/variables/AxisTickStrategies.html
-[UI position origins]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/variables/UIOrigins.html
-[UI layout builders]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/variables/UILayoutBuilders.html
-[Time formatting functions]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/variables/TimeFormattingFunctions.html
-[Synchronize axis intervals utility]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/functions/synchronizeAxisIntervals.html
-[Translate point utility]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/functions/translatePoint.html
+[Dashboard]: https://lightningchart.com/js-charts/api-documentation/v4.2.0/classes/Dashboard.html
+[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v4.2.0/classes/ChartXY.html
+[Line series]: https://lightningchart.com/js-charts/api-documentation/v4.2.0/classes/LineSeries.html
+[Axis]: https://lightningchart.com/js-charts/api-documentation/v4.2.0/classes/Axis.html
+[Axis tick strategies]: https://lightningchart.com/js-charts/api-documentation/v4.2.0/variables/AxisTickStrategies.html
+[UI position origins]: https://lightningchart.com/js-charts/api-documentation/v4.2.0/variables/UIOrigins.html
+[UI layout builders]: https://lightningchart.com/js-charts/api-documentation/v4.2.0/variables/UILayoutBuilders.html
+[Time formatting functions]: https://lightningchart.com/js-charts/api-documentation/v4.2.0/variables/TimeFormattingFunctions.html
+[Synchronize axis intervals utility]: https://lightningchart.com/js-charts/api-documentation/v4.2.0/functions/synchronizeAxisIntervals.html
 
