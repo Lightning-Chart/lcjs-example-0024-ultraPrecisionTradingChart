@@ -1,6 +1,6 @@
-# JavaScript Ultra Precision Trading Chart
+# JavaScript Ultra Precision Trend Chart
 
-![JavaScript Ultra Precision Trading Chart](ultraPrecisionTradingChart-darkGold.png)
+![JavaScript Ultra Precision Trend Chart](ultraPrecisionTradingChart-darkGold.png)
 
 This demo application belongs to the set of examples for LightningChart JS, data visualization library for JavaScript.
 
@@ -19,29 +19,20 @@ The demo can be used as an example or a seed project. Local execution requires t
 
 ## Description
 
-**Please note that using LightningChart JS for Trading use cases requires a special license agreement.**
-For more information, please [contact us](https://lightningchart.com/contact/).
-
-This example showcases how LightningChart JS can be used to enable next-generation Fintech chart applications.
-
 As proven in our [2021 line charts performance comparison](https://lightningchart.com/javascript-charts-performance-comparison/), LightningChart JS line charts are **over 700 times faster** than other web charts. LightningChart JS has been proved to be able to visualize data sets with even up to 500 million data points.
 
-This large data plotting capacity paired together with great zoom capabilities enables some previously unseen possibilities in Fintech applications.
+This large data plotting capacity paired together with great zoom capabilities enables some previously unseen possibilities in data visualization applications.
 
-In this example, a random data set is generated for 3 stock price trends simulating a 1 microsecond resolution between each price measurement.
+In this example, a random data set is generated for 3 price trends simulating a 1 microsecond resolution between each price measurement.
 These trends are displayed with a shared X (time) view, showcasing an example on how analysis of incredibly high speed transactions and price impacts could be done in real life.
 
 The amount of data in this example is 7 500 000 points. With 1 μs precision, this translates to 2.5 seconds of data per each trend.
 
 As you can see, the data amount scales very quickly to crazy amounts. For this reason, this kind of visualization applications aren't applicable to entire data sets, but only to elsewhere identified "points of interest", such as turning points in trends.
 
-To learn more about LightningChart JS and its Fintech capabilities, here are some potentially interesting links:
+To learn more about LightningChart JS and its capabilities, here are some potentially interesting links:
 
--   [Next Generation Real-Time Trading Dashboard](https://lightningchart.com/lightningchart-js-interactive-examples/examples/lcjs-example-0509-dashboardRealtimeTrading.html)
-
--   [LC JS Trading + Indicators (Volume, RSI, SMA, EMA) Showcase with real trading data from alphavantage.co](https://arction.github.io/lcjs-showcase-trading/)
-
--   [Candlestick, Area, DateTime features and more](https://lightningchart.com/lightningchart-js-interactive-examples/examples/lcjs-example-0502-dashboardTrading.html)
+-   [Next Generation Real-Time Monitoring Dashboard](https://lightningchart.com/lightningchart-js-interactive-examples/examples/lcjs-example-0509-dashboardRealtimeTrading.html)
 
 -   [Latest news on LC JS performance](https://lightningchart.com/high-performance-javascript-charts/)
 
@@ -67,7 +58,7 @@ Official [API documentation][1] can be found on [LightningChart][2] website.
 
 If the docs and other materials do not solve your problem as well as implementation help is needed, ask on [StackOverflow][3] (tagged lightningchart).
 
-If you think you found a bug in the LightningChart JavaScript library, please contact support@lightningchart.com.
+If you think you found a bug in the LightningChart JavaScript library, please contact sales@lightningchart.com.
 
 Direct developer email support can be purchased through a [Support Plan][4] or by contacting sales@lightningchart.com.
 
@@ -80,13 +71,13 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2022. All rights reserved.
 
 
-[Dashboard]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/classes/Dashboard.html
-[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/classes/ChartXY.html
-[Line series]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/classes/LineSeries.html
-[Axis]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/classes/Axis.html
-[Axis tick strategies]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/variables/AxisTickStrategies.html
-[UI position origins]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/variables/UIOrigins.html
-[UI layout builders]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/variables/UILayoutBuilders.html
-[Time formatting functions]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/variables/TimeFormattingFunctions.html
-[Synchronize axis intervals utility]: https://lightningchart.com/js-charts/api-documentation/v5.0.1/functions/synchronizeAxisIntervals.html
+[Dashboard]: https://lightningchart.com/js-charts/api-documentation/v5.1.0/classes/Dashboard.html
+[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v5.1.0/classes/ChartXY.html
+[Line series]: https://lightningchart.com/js-charts/api-documentation/v5.1.0/classes/LineSeries.html
+[Axis]: https://lightningchart.com/js-charts/api-documentation/v5.1.0/classes/Axis.html
+[Axis tick strategies]: https://lightningchart.com/js-charts/api-documentation/v5.1.0/variables/AxisTickStrategies.html
+[UI position origins]: https://lightningchart.com/js-charts/api-documentation/v5.1.0/variables/UIOrigins.html
+[UI layout builders]: https://lightningchart.com/js-charts/api-documentation/v5.1.0/variables/UILayoutBuilders.html
+[Time formatting functions]: https://lightningchart.com/js-charts/api-documentation/v5.1.0/variables/TimeFormattingFunctions.html
+[Synchronize axis intervals utility]: https://lightningchart.com/js-charts/api-documentation/v5.1.0/functions/synchronizeAxisIntervals.html
 

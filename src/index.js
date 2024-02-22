@@ -1,5 +1,5 @@
 /*
- * Trading line chart with 1 microsecond precision data
+ * line chart with 1 microsecond precision data
  * 3 series, display a 2.5 second interval, total data points = 7.5 million
  */
 // Import LightningChartJS
@@ -84,7 +84,7 @@ const seriesList = chartList.map((chart, i) => {
             },
             automaticColorIndex: i * 2,
         })
-        .setName('< Stock name >')
+        .setName('Trend')
         .setCursorInterpolationEnabled(false)
     return series
 })
@@ -98,7 +98,7 @@ Promise.all(
             .generate()
             .toPromise()
             .then((xyTrace) => {
-                // Map generated XY trace data set into a more realistic trading data set.
+                // Map generated XY trace data set into a more realistic data set.
                 const baseLine = 10 + Math.random() * 2000
                 const variationAmplitude = baseLine * 0.03
                 const yMin = xyTrace.reduce((min, cur) => Math.min(min, cur.y), Number.MAX_SAFE_INTEGER)
