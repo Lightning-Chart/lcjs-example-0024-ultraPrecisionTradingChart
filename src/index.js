@@ -30,7 +30,7 @@ const STEP_X = 10 ** -3
 const dashboard = lightningChart().Dashboard({
     numberOfColumns: 1,
     numberOfRows: CHANNELS,
-    theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
+    theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined
 })
 
 const chartList = new Array(CHANNELS).fill(0).map((_, i) => {
