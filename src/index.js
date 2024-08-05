@@ -3,10 +3,10 @@
  * 3 series, display a 2.5 second interval, total data points = 7.5 million
  */
 // Import LightningChartJS
-const lcjs = require('@arction/lcjs')
+const lcjs = require('@lightningchart/lcjs')
 
 // Import xydata
-const xydata = require('@arction/xydata')
+const xydata = require('@lightningchart/xydata')
 
 const { AxisTickStrategies, emptyFill, lightningChart, Themes } = lcjs
 const { createProgressiveTraceGenerator } = xydata
@@ -39,10 +39,6 @@ const channelList = new Array(CHANNELS).fill(0).map((_, i) => {
         })
         .setAreaFillStyle(emptyFill)
         .setName(chName)
-        .setCursorInterpolationEnabled(false)
-        .setCursorResultTableFormatter((builder, _, sample) =>
-            builder.addRow(series.axisX.formatValue(sample.x)).addRow(chName, '', `${sample.y.toFixed(0)} €`),
-        )
     return { chart, series }
 })
 
