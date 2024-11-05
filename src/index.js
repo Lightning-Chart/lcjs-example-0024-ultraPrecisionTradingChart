@@ -30,7 +30,7 @@ const channelList = new Array(CHANNELS).fill(0).map((_, i) => {
     const axisY = chart
         .addAxisY({ iStack })
         .setTitle(chName)
-        .setMargins(iStack > 0 ? 15 : 0, iStack < CHANNELS.length - 1 ? 15 : 0)
+        .setMargins(iStack > 0 ? 15 : 0, iStack < CHANNELS - 1 ? 15 : 0)
     const series = chart
         .addPointLineAreaSeries({
             yAxis: axisY,
