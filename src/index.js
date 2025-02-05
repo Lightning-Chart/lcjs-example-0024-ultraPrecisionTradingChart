@@ -30,7 +30,7 @@ const channelList = new Array(CHANNELS).fill(0).map((_, i) => {
     const axisY = chart
         .addAxisY({ iStack })
         .setTitle(chName)
-        .setMargins(iStack > 0 ? 15 : 0, iStack < CHANNELS - 1 ? 15 : 0)
+        .setMargins(iStack > 0 ? 5 : 0, iStack < CHANNELS - 1 ? 5 : 0)
     const series = chart
         .addPointLineAreaSeries({
             yAxis: axisY,
@@ -66,54 +66,5 @@ Promise.all(
     channelList.forEach((ch, i) => {
         ch.series.appendJSON(dataSets[i])
         ch.series.axisX.fit(false)
-    })
-
-    // Customize chart interactions.
-    channelList.forEach((ch) => {
-        ch.chart.setMouseInteractions(false)
-        ch.chart.getDefaultAxisX().setMouseInteractions(false)
-    })
-
-    // Create custom chart interaction for mouse dragging inside chart area.
-    const xBandList = channelList.map((ch) => ch.chart.getDefaultAxisX().addBand().setVisible(false))
-    channelList.forEach((ch) => {
-        const chart = ch.chart
-        const axisX = chart.getDefaultAxisX()
-        const axisY = chart.getDefaultAxisY()
-        chart.setMouseInteractionRectangleFit(false).setMouseInteractionRectangleZoom(false)
-        chart.onSeriesBackgroundMouseDrag((_, event, button, startLocation, delta) => {
-            if (button !== 0) return
-
-            xBandList.forEach((band, i) => {
-                const bandChart = channelList[i].chart
-                const xAxisLocationStart = bandChart.translateCoordinate(
-                    { clientX: startLocation.x, clientY: startLocation.y },
-                    bandChart.coordsAxis,
-                ).x
-                const xAxisLocationNow = bandChart.translateCoordinate(event, bandChart.coordsAxis).x
-                if (Math.abs(event.clientX - startLocation.x) > 10) {
-                    band.setVisible(true).setValueStart(xAxisLocationStart).setValueEnd(xAxisLocationNow)
-                } else {
-                    band.setVisible(false)
-                }
-            })
-        })
-        chart.onSeriesBackgroundMouseDragStop((_, event, button, startLocation) => {
-            if (button !== 0 || !xBandList[0].getVisible()) return
-
-            const xStart = Math.min(xBandList[0].getValueStart(), xBandList[0].getValueEnd())
-            const xEnd = Math.max(xBandList[0].getValueStart(), xBandList[0].getValueEnd())
-            channelList[0].chart.getDefaultAxisX().setInterval({ start: xStart, end: xEnd })
-            xBandList.forEach((band, i) => {
-                band.setVisible(false)
-            })
-        })
-        chart.onSeriesBackgroundMouseDoubleClick((_, event) => {
-            if (event.button !== 0) return
-            channelList.forEach((ch) => {
-                ch.chart.getDefaultAxisX().fit(false)
-                ch.chart.getDefaultAxisY().fit(false)
-            })
-        })
     })
 })
