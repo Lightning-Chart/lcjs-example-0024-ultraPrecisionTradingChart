@@ -9,7 +9,7 @@ const lcjs = require('@lightningchart/lcjs')
 // Import xydata
 const xydata = require('@lightningchart/xydata')
 
-const { AxisTickStrategies, emptyFill, lightningChart, DataSetXY, Themes } = lcjs
+const { AxisTickStrategies, emptyFill, lightningChart, DataSet, Themes } = lcjs
 const { createMultiChannelTraceGenerator } = xydata
 
 const CHANNELS = 3
@@ -32,7 +32,7 @@ const axisX = chart.getDefaultAxisX().setTickStrategy(AxisTickStrategies.Time)
 chart.getDefaultAxisY().dispose()
 
 // Single data set with shared timestamps
-const dataSet = new DataSetXY({
+const dataSet = new DataSet({
     schema: {
         x: { pattern: 'progressive' },
         ...Object.fromEntries(Array.from({ length: CHANNELS }, (_, i) => [`y${i}`, { pattern: null }])),
